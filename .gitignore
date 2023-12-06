@@ -1,0 +1,11 @@
+
+*.dll
+.screenshots/*
+.local/*
+.objects/*
+.settings/*
+.project/*
+.data/*
+.tmh/*
+Data/Temp/*
+Exceptions_Screenshots/*

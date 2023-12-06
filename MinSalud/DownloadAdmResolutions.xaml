@@ -1,0 +1,615 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadAdmResolutions" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ResolutionsUrl" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_ResolutionNumber" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_ResolutionYear" Type="InArgument(x:String)" />
+    <x:Property Name="in_FolderStorage" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1668,6008</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Activities.System.FileOperations</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.IO</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>GestionSaludPublica.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Descarga resoluciones del Ministerio de salud desde su página.&#xD;&#xA;&#xD;&#xA;Entradas:&#xD;&#xA;&#xD;&#xA;- In_ResolutionUrl: Url de la página oficial de Min salud donde se descargarán las resoluciones.&#xD;&#xA;- In_ResolutionNumber: Numero de la resolución a la cual se va a buscar (Solo el número, sin el año ni otras palabras)&#xD;&#xA;- In_ResolutionYear: Año de la resolución que se busca (Es opcional, sirve de complemento)&#xD;&#xA;_ In_FolderStorage: Carpeta donde se guardarán las resoluciones, si está es vacía se guardará en la ruta temporal." DisplayName="DownloadAdmResolutions" sap:VirtualizedContainerService.HintSize="1678,5943" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="Resolución 202" Name="ResolutionName" />
+      <Variable x:TypeArguments="x:String" Name="ResolutionDownloadLink" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1616,141" sap2010:WorkflowViewState.IdRef="LogMessage_10">
+      <ui:LogMessage.Level>
+        <InArgument x:TypeArguments="ui:LogLevel">
+          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Level>
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">"Downloading administrative resolution from Min Educación webpage..."</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <If sap2010:Annotation.AnnotationText="" DisplayName="If year isn't pass" sap:VirtualizedContainerService.HintSize="1616,915" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">string.IsNullOrEmpty(in_ResolutionYear)</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+            <ui:LogMessage.Level>
+              <InArgument x:TypeArguments="ui:LogLevel">
+                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Level>
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Year of resolution is not tiped, searching without year resolution..."</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">ResolutionName</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">string.Format("Resolución {0}", in_ResolutionNumber)</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ResolutionName</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">string.Format("Resolución {0} de {1}", in_ResolutionNumber, in_ResolutionYear)</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+            <ui:LogMessage.Level>
+              <InArgument x:TypeArguments="ui:LogLevel">
+                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Level>
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Year of resolution is not tiped, searching without year resolution..."</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1616,141" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+      <ui:LogMessage.Level>
+        <InArgument x:TypeArguments="ui:LogLevel">
+          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Level>
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">String.Format("Searching '{0}'...", ResolutionName)</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Páginas - Normativa Resoluciones" sap:VirtualizedContainerService.HintSize="1616,4383" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1582,4166" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="upr:ILocalResource" Name="FileDownloaded" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NSetText DisplayName="Set Text - Resolution Name" sap:VirtualizedContainerService.HintSize="1520,162" sap2010:WorkflowViewState.IdRef="NSetText_1" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/Paginas/Norm_Resoluciones.aspx" DesignTimeRectangle="1107, 237, 232, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Buscar Todo'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Buscar Todo' /&gt;" Guid="eec06384-c63c-4e6e-aeeb-b2fd9ad56dad" ImageBase64="" InformativeScreenshot="65db8e4e86804228884b8f7737cb02cc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Resoluciones*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1352, 248, 46, 19" ElementType="Text" FriendlyName="'Buscar'" FullSelectorArgument="&lt;webctrl id='cambiarLupa' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cambiarLupa' tag='SPAN' type='' class='' aaname='Buscar' check:innerText='Buscar' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSetText.Target>
+              <uix:NSetText.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">ResolutionName</CSharpValue>
+                </InArgument>
+              </uix:NSetText.Text>
+            </uix:NSetText>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_12">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">"Click on 'Buscar'"</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Buscar'" sap:VirtualizedContainerService.HintSize="1520,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/Paginas/Norm_Resoluciones.aspx" DesignTimeRectangle="1352, 248, 46, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Buscar'" FullSelectorArgument="&lt;webctrl id='cambiarLupa' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cambiarLupa' tag='SPAN' type='' class='' aaname='Buscar' check:innerText='Buscar' /&gt;" Guid="f4f86557-8ff4-437b-9ca2-a31f55199765" ImageBase64="" InformativeScreenshot="a3c66e84c699e139a693c5e27232efd3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Resoluciones*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_13">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">"Waiting for the results..."</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <uix:NCheckState DisplayName="Check App State 'Tipo de documento'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="1520,360" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Timeout="60" Version="V3">
+              <uix:NCheckState.IfExists>
+                <ui:LogMessage sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+                  <ui:LogMessage.Level>
+                    <InArgument x:TypeArguments="ui:LogLevel">
+                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Level>
+                  <ui:LogMessage.Message>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">String.Format("Looks like the {0} is not in normative list.", ResolutionName)</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Message>
+                </ui:LogMessage>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resoluci%C3%B3n%20202" DesignTimeRectangle="468, 853, 160, 22" DesignTimeScaleFactor="1" FriendlyName="'Aplicar'" FullSelectorArgument="&lt;webctrl id='SubmitValue' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='SubmitValue' tag='DIV' type='' class='' aaname='                                            ' check:innerText='Aplicar | Borrar' /&gt;" Guid="224bb180-e85b-440f-942d-44276993a2ba" ImageBase64="" InformativeScreenshot="9d73f7cb7d70f23583c849221addf322.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="468, 575, 246, 31" ElementType="Text" FriendlyName="'Tipo de documento'" FullSelectorArgument="&lt;webctrl parentid='Container' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='Container' tag='A' type='' class=' ms-ref-refinername' aaname='                     Tipo de documento                                        ' check:innerText='Tipo de documento' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_14">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">"Filtering by 'Normativas'..."</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="1520,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resolucion%20202" DesignTimeRectangle="474, 753, 13, 13" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='dctype_ChkGroup_Normativa' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dctype_ChkGroup_Normativa' tag='INPUT' type='checkbox' class='ms-padding0 ms-margin0 ms-verticalAlignMiddle' /&gt;" Guid="a8c59215-83d9-4d3e-9b51-454bcd2761db" ImageBase64="" InformativeScreenshot="9f4516a1547316e4171e68140ae1c521.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="492, 753, 87, 28" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='*Normativa*' parentid='Value' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='*Normativa*' parentid='Value' tag='LABEL' type='' check:innerText='Normativa' /&gt;" ImageBase64="" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_15">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">"Click on 'Aplicar'..."</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aplicar'" sap:VirtualizedContainerService.HintSize="1520,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resolucion%20202#k=%2CResolucion%20202" DesignTimeRectangle="468, 857, 45, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Aplicar'" FullSelectorArgument="&lt;webctrl parentid='submit' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='submit' tag='A' type='' class='' aaname='                                Aplicar                            ' check:innerText='Aplicar' /&gt;" Guid="ee4abe8a-0da2-4249-bcc0-a9a6f9c79767" InformativeScreenshot="776361d931cd7334d1448e77316f59ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target DesignTimeRectangle="468, 575, 246, 31" ElementType="Text" FriendlyName="'Tipo de documento'" FullSelectorArgument="&lt;webctrl parentid='Container' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='Container' tag='A' type='' class=' ms-ref-refinername' aaname='*Tipo de documento*' check:innerText='Tipo de documento' /&gt;" ImageBase64="" SearchSteps="FuzzySelector" />
+                      <uix:Target DesignTimeRectangle="468, 606, 246, 220" FriendlyName="'Conceptos (9)'" FullSelectorArgument="&lt;webctrl id='unselShortList' tag='DIV' innertext='*Normativa*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='unselShortList' tag='DIV' innertext='*Normativa*' type='' class='ms-ref-unsel-shortList' aaname='                                                                                                                                                                                                                                                                                                                            ' check:text='Conceptos                             (9)                                                          ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPoAAADgCAYAAAAqoXvAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA22SURBVHhe7dxBjlxJEcbxuQR7jsIRfATEYm6At7DiCBYrkNhxBTbIGy/gCkhI3niHNL5AM6HpGAdBZLyM1/WyMl/+f1LIlRmRr6u736easar83curr1+/UhR1s1I/B/273/yFoqiblfo56J8/f359BODZfvjhhzeXzTRBByYUBbdaBB2YXBTcahF0YHJRcKtF0IHJRcGtFkEHJhcFt1oEHZhcFNxqlYL+5cuXlw8fPry8f//+sGRO5gG8TRRcW+/evQv3bZWCLuH99OnT6yonczIP4G2i4GpJyLWivlYp6PJKXVGdr/j+++9fH/3v40d49PXO6n0eszxfXCMKrpQN+VHYnxZ0uTm1zrjy5p4hOK3nUN3H+qLgRiHXiuaf+or+lpvzyht7htD45yBrrcgMzxnXiIJbramCbm/m6MZt9f1sNCNa+8L2fD/b1z9tT9d2T2U9dUUP64qCW63pgm7ZdW8vm7N6zxz1sr7w8z2yubM9rCsKbrVuH3RLeraUP3O2J2TPl/LrlmzmbA/rioJbrW2C3ntenO2JaM+TmWzuih7WFQW3WrcPuq57z4uzPZHNW619cUUP64qCW62nBV1uSi3lb9RobUtlc5bdP9uz/Fpl89F+JDurZfk17iMKbrVKQeedceNUg0vQ7ysKbrVKQee97mP1hpeQ31sU3GqVgg5gvCi41SLowOSi4FaLoAOTi4JbLYIOTC4KbrUIOjC5KLjVIujA5KLgVougA5OLglstgg5MLgputQg6MLkouNUi6MDkouBWi6ADk4uCW61S0HmvOzBeFNxqlYIu4eXTa8BYUXCrVQq6vFJXVOePyKe0Vvuk1tXPl0+u3V8U3Go9Lega2t4bdcUbuvWcs+8l6smeL8uvcS9RcKv11Ff0yg264s0cBVLLy3qen+k5g3VFwa3WVEHXG11L9exburY9fdza88721BU90eofncO6ouBWa7qgW3Zdna3MC3/eynot2dzZnmj1e58X1hMFt1q3DbpXPe9L+XVLNjO6h7VFwa0WQX91dN6TmWxuph7WFgW3WgT9VXY+up5o7YtH97Iz4qiPdUXBrdbTgi43ppbyN2vWE3o+O6eOZqK1ltXaj2RntVTWE35tZT2sLwputUpB551xNaMCSNDvLQputUpB573udVeHkJDfXxTcapWCDmC8KLjVIujA5KLgVougA5OLglstgg5MLgputQg6MLkouNUi6MDkouBWi6ADk4uCWy2CDkwuCm61CDowuSi41SLowOSi4FaLoAOTi4JbrVLQea87MF4U3GqVgi7h5dNrwFhRcKtVCrq8UldU56/Q++kuPgWGWUXBrdbTgj4iWNnXiHqEHTOKglutLYMu+wQdq4iCW60pg65B9DNHa6vV0/2jPjCLKLjVmi7ofr+1Pgpk1Ld7rfNH1wVGi4JbrSmD7svStd/3WudU6/zRdYHRouBWa/pXdE/7vXNK1lF50R7wTFFwqzV90M+G8Wim9+sDz6Zh/fjxY7mmCLovFe1ZrX0vm4t6vdcFRhoe9FneGfeIoEcIOmY0POgzvNf9qvAScsxqeNABjEfQgQ0QdGADBB3YAEEHNkDQgQ0QdGADBB3YAEEHNkDQgQ0QdGADw4POv+sOjDc86BJe/l13YKzhQZdX6orqvJjpU2Szf6KNT+btYemg73LzXfV9tq5b3cf8CPoCRgVd1lqRq54HrnfLoNt9vXG1vDM9u689v1bRujUX9Xr2vaynruhhXlsE3erteZVzrdneOdHbE9lsSzZ3tod5bR90X1arF81ZrVl57EvZx6K3J/ys70eymbM9zGv7oLdUzvXO+jmr9xriaC1kL9pXV/QwL4JuPKInWrO9c6K3J/xatfbFFT3Ma/mg+9J9ZR+LaK3l2Z7t+9lsHfW0rJ613dN1a87vR7KzWpZfYx3Dg8474+ZRDS5BX9fwoPNe97n0hpeQr2140AGMR9CBDRB0YAMEHdgAQQc2QNCBDRB0YAMEHdgAQQc2QNCBDRB0YAPDg/6nf7y8/OL3Pw7+9rhkTuYBvM3woPeGXEvmAbzN8KBHYfb193+9vPz6r9/Wq7vyk19Xf6qMT63dw3RBl5CLf//n216L3IT+Rpzhxhz1HKKvoz8T37P7R30v2sNapgr67/72OvSjX/3x235LdGPOcFOOeg5H37tdZ8+pch2saZqgS7CV/c92qRa9Ae2NGN2kWpaubU8ft/a8qGf3dN/3rWitlTnqCzvTM6+i2cp5zOdpQZcwy3+e//IPP5X68z+/zWi16M3XuqH9zel7WV8crS3by86dvaaX9UT0dWxFjnpY19OCLiEX8qf+f7n8aQOu1WJvPn0c7amsJ7J5Ea1tqWjO0rXfF7Jnq+VsT1XP91wT83pa0KU07ML+5ZuvFnvz6eNoT2U9kc2L7HxvT+i6dy7S6mVnrOq1e6+LOT016FIadvuXb75a/M0na7sX9ZXviWxeZOd7e6pnL5pRvddU2bWznsqujfk9PehS/i/ffLVEN2hrL9r3jmaitS3L7vmeiPaEntPK+L4/m/W9ox7WNjzovDPucUYFkKCvb3jQea/7Y10dQkJ+D8ODDmA8gg5sgKADGyDowAYIOrABgg5sgKADGyDowAYIOrABgg5sgKADGxge9C9fvrx8+PDh5f3794clczIP4G2GB13C++nTp9dVTuZkHsDbDA+6vFJXVOfvZLZPjvU+Hz7xNp+lgy43lK2Z3O1mj76f7Gd/t+9/dcsH3Zrp5rrbjX70s575d4EbB10fy59+3++pVq9n3/Z69r2o5+eiGWH3fU+c7amsp1rXxhxuHfSsL/x8pHKm53qq5zo9M+JRvZajuVa/9/q43vJBt2VFN5mftzN+reysn7GPRdYTel5LRbMim6n0fCm/bslmzvYw1vJBb4l6PTeezNi5ytfIzlVmVe/1Kr2IzGRzrd7RtXu+NsbYOuit83Y/O3O2J3pme2bE2Z7V2hdRL5tXPTMYY6ugC9nXslr7otXrWds9Xft9Ee33zIiedetctB/JzmpZfo3nGh503hm3pmpwCfpchged97qvqze8hHw+w4MOYDyCDmyAoAMbIOjABgg6sAGCDmyAoAMbIOjABgg6sAGCDmyAoAMbGB503usOjDc86BJePr0GjDU86PJKXVGdv6MdPg32iO+RT821LR10+cXamskjn89s39ujtb6/aF/2fFl+jZ8sH3Rrpl/yI5/L3W/e6PeodSQ6i/9326DrY/nT7/s90bOOzgnfs2vdE9Fei5318619z85Fs62erm1PH7f2vKxnZf2zZ4/O7ejWQc/6orWunHvENbxsdsR15HHWF0dr64qeaPWPzu1o+aDbsqJf9tGMrqN9X8o+tvz+0drKZuWxrxbfs+tKT2TzIlrbahnd29XyQW+Jen6vtT6as1q9o2tUrmnX2Tmvcp2jr5HNi+x8dD01urcrgu5Uz7V62Rnh11Y2O+I60TWzeZGdj66nzvSyM+Kov6Otgi5kXyty5lyr5/dacxE76+db+150zmpdx6/F0Uy0tpU5Ohv1W7LezoYHffZ3xnGjjPfInzm/v9jwoM/8Xndukud5xM+e31/b8KADGI+gAxsg6MAGCDqwAYIObICgAxsg6MAGCDqwAYIObICgAxsg6MAGhgedf9cdGG940CW8/LvuwFjDgy6v1BXV+Su99dNRrfMrfHKLT4atbemgy81n62pXfI1HXDO6hv5MWtdv9bJz0R7WsHzQratvxFlv9KOfQ+/P6ew5zO/2QZc9La/Vy/ZV1hN6/uiMnxF23/e8o76wMz3zKpqtnMc8bh30bN26YXvP9M4JXb/1fOSoF13LVuSoh/UsH3Rbnu/bGb9Wfs+fUb1z1tnzreuJrKceee2er4f5LB90dfamlJnsOq1e75x19nzreiLrqUdeu+frYT63CbqorpXdz86cmRO6fuv5SNQ7e+2sp6I9zO9WQRfRzapltfZFqxets1m/3zMjjtZe1NfrPrqHNQ0POu+Me7xRASTo6xoedN7rfo2rQ0jI1zY86ADGI+jABgg6sAGCDmyAoAMbIOjABgg6sAGCDmyAoAMbIOjABjSsbymCDkwuCm61SkHnve7AeFFwq1UKuoSXT68BY0XBrVYp6PJKXVGdP5J9CmuVT4DN8Emy3ucww3PFwkGXG6hVmax/dPatHnX93utc9f1E15U9Le+q54F+UXCr9fRX9MqNlM1efUM+6vq917nq+/HXra4xXhTcak0ZdNnTsux+1LNacyLrWXbOz7b2I3bWz0f7dq+172U9lfVU69p4nii41Zr+Fd32/WzWs3rnrMrXyq55dvboXDbbcjTX6vdeH9eIglut6V/Rbd/PHvVsKb9u8TPRNWy1+F60tqWiOcvP+n4kmznbw/Wi4FZruqBn695eNqdkL9pX2TWyc17lOr094ddC9qJ91eplZ8RRH9eKglutbYMuWvsiu0bv9cXZ62Q94deqtS+iXjavemZwnSi47969a1Y0P13QhezZUq19Ea2j2Wivxc76+dZ+xM76+Z6eOprz+5HsrJbl1xgvCq5Ub8ilSkHnnXHrqwaXoD9fFFytnpBLlYLOe93voTe8hHwOUXBtHYVcqhR0AONFwa0WQQcmFwW3WgQdmFwU3GoRdGByUXCrRdCByUXBrRZBByYXBbdaBB2YXBTcajWDTlHUvUr9HHQA90XQgdt7efkv2KYBtiQRwIMAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Se valida que exista la Resolución en el titulo, si está no es tal cual como se busca, se intenta buscar con el nombre alternativo." DisplayName="Check App State 'Resolución 0202 de 2021'" sap:VirtualizedContainerService.HintSize="1520,1449" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Timeout="5" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,503" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_16">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">"Getting Resolution URL..."</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="href" DisplayName="Get Attribute 'Resolución'" sap:VirtualizedContainerService.HintSize="388,207" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+                    <uix:NGetAttributeGeneric.Result>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">ResolutionDownloadLink</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetAttributeGeneric.Result>
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resoluci%C3%B3n%20202#eee37da6-2e67-4038-9ee7-4aef0fde343b=%7B%22k%22%3A%22%2CResoluci%C3%B3n%20202%22%2C%22r%22%3A%5B%7B%22n%22%3A%22dctype%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%3A%22Normativa%22%7D%7D%5D%7D" DesignTimeRectangle="787, 584, 523, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Resolución 0202 de 2021'" FullSelectorArgument="&lt;webctrl parentname='Item' tag='A' /&gt;" Guid="f5d0f575-8a95-4f62-9bd4-3954ebb5eb13" ImageBase64="" InformativeScreenshot="71c6b7f1afe14bba57703c92de494c9d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">string.Format("&lt;webctrl parentname='Item' tag='A' type='' class='ms-srch-item-link' aaname='*' check:innerText='{0}*' /&gt;", ResolutionName)</CSharpValue>
+                          </InArgument>
+                        </uix:TargetAnchorable.FuzzySelectorArgument>
+                      </uix:TargetAnchorable>
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,1201" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,143" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">string.Format("The resolution {0} not found by main title. Finding by alternative title...", ResolutionName)</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                  <uix:NCheckState DisplayName="Check App State 'Resolución 0202 de 2021'" sap:VirtualizedContainerService.HintSize="954,903" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,686" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_18">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">"Resolution not founb by principal link, searching by optional name..."</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_17">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">"Getting Resolution URL..."</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="href" DisplayName="Get Attribute 'Resolución'" sap:VirtualizedContainerService.HintSize="388,207" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="2cf6f3b9-53fa-4c79-89b8-ca4b3e78f505" Version="V3">
+                          <uix:NGetAttributeGeneric.Result>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">ResolutionDownloadLink</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetAttributeGeneric.Result>
+                          <uix:NGetAttributeGeneric.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resoluci%C3%B3n%20202#eee37da6-2e67-4038-9ee7-4aef0fde343b=%7B%22k%22%3A%22%2CResoluci%C3%B3n%20202%22%2C%22r%22%3A%5B%7B%22n%22%3A%22dctype%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%3A%22Normativa%22%7D%7D%5D%7D" DesignTimeRectangle="787, 584, 523, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Resolución 0202 de 2021'" FullSelectorArgument="&lt;webctrl parentname='Item' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Item' tag='A' type='' class='ms-srch-item-link' aaname='Resolución*' check:innerText='Resolución*' /&gt;" Guid="f5d0f575-8a95-4f62-9bd4-3954ebb5eb13" InformativeScreenshot="0bba317e556408a534a09fc52d8c7b6b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="744, 673, 696, 16" ElementType="Text" FriendlyName="'Resolución 202 de 2021'" FullSelectorArgument="&lt;webctrl aaname='Resolución 202 de 2021' parentname='Item' tag='DIV' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAArwAAAAUCAYAAABvau7pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVHhe7dthaiQhEAbQvdPc/2yzCCtUXLXadjqblfdAmPYry878KkLy6w0AAAcz8AIAcDQDLwAARzPwAgBwNAMvAABH+zED7+v1+vNp36jXJ+/4CU77eQAAnvBl4C0DVLu+y9N3fbp//I56vXfzK+6ei7L32M2rWQYA8KS/Bt7Wdw0q/9NAlH1Pu/lVd85Eu++Z5UV5rgsA4F9YHnjjADOqH+VZVrVZ0auPK7pTO8p7ejVxbzcfKTXtimZZT68m7u3m0WgfAOBpSwPvnbxaObtSW+30amt6ZzJtz1bW806+e2fPbs9RfuddAAA+YTrwZs9F3JsNNStnV2p7dntl/Vtt/WrPK/dlPVfv7GnrV3vezQAAnjT9p7VWm9cVzfZbcW/0ucryaLdX1r8qdVfPj/Z6+z1Zz9qrXVeMalf2evtRlgMAPGX7N7wzsb53dpSv1Pbs9sr6F7OaKz2v3BFlPVf7VbNz2Z3F1Xvvvh8AwK6P/g1va+XsrLY8z/JilK/UVr296E6e3Zlpz5TnrGd2z508u3NkpRYA4JPSgbdoh5y4ollWzPLec6yb5b0sWqktentR7BVXtJLVlWlr2zMxb7Oetr6uaCWrK8pyAICnfRl4AQDgNAZeAACOZuAFAOBoBl4AAI5m4AUA4GDv92+uNbQ/r83fyQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector">
+                                    <uix:Target.FuzzySelectorArgument>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">string.Format("&lt;webctrl aaname='*' parentname='Item' tag='DIV' type='' class='' check:innerText='{0}*' /&gt;", ResolutionName)</CSharpValue>
+                                      </InArgument>
+                                    </uix:Target.FuzzySelectorArgument>
+                                  </uix:Target>
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetAttributeGeneric.Target>
+                        </uix:NGetAttributeGeneric>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,388" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                          <ui:LogMessage.Level>
+                            <InArgument x:TypeArguments="ui:LogLevel">
+                              <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Level>
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">string.Format("Didn't find the resolution {0}", ResolutionName)</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                        <Throw sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_1">
+                          <InArgument x:TypeArguments="s:Exception">
+                            <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">new BusinessRuleException("Doesn't exist the resolution")</CSharpValue>
+                          </InArgument>
+                        </Throw>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resolucion%20202#eee37da6-2e67-4038-9ee7-4aef0fde343b=%7B%22k%22%3A%22%2CResolucion%20202%22%2C%22r%22%3A%5B%7B%22n%22%3A%22dctype%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%3A%22Normativa%22%7D%7D%5D%7D" DesignTimeRectangle="787, 584, 523, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Resolución 0202 de 2021'" FullSelectorArgument="&lt;webctrl parentname='Item' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Item' tag='A' type='' class='ms-srch-item-link' aaname='Resolución*' check:text='Resolución*' /&gt;" Guid="9fbcd70f-8d3d-43f8-8ea2-1a82657ef696" ImageBase64="" InformativeScreenshot="0bba317e556408a534a09fc52d8c7b6b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="744, 673, 696, 16" ElementType="Text" FriendlyName="'Resolución 202 de 2021'" FullSelectorArgument="&lt;webctrl aaname='Resolución 202 de 2021' parentname='Item' tag='DIV' /&gt;" ImageBase64="" SearchSteps="FuzzySelector">
+                              <uix:Target.FuzzySelectorArgument>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">string.Format("&lt;webctrl aaname='*' parentname='Item' tag='DIV' type='' class='' check:innerText='{0}*' /&gt;", ResolutionName)</CSharpValue>
+                                </InArgument>
+                              </uix:Target.FuzzySelectorArgument>
+                            </uix:Target>
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/sites/rid/Paginas/freesearchresults.aspx?k=&amp;k=Resolucion%20202#eee37da6-2e67-4038-9ee7-4aef0fde343b=%7B%22k%22%3A%22%2CResolucion%20202%22%2C%22r%22%3A%5B%7B%22n%22%3A%22dctype%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%824e6f726d6174697661%5C%22%22%3A%22Normativa%22%7D%7D%5D%7D" DesignTimeRectangle="787, 420, 523, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Resolución 0202 de 2021'" FullSelectorArgument="&lt;webctrl parentname='Item' tag='A' /&gt;" Guid="63cdc6c4-e94b-4b20-898c-ec0a1afabd52" ImageBase64="" InformativeScreenshot="78668c1df61786158f51bb0e179db77b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Buscar*' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">string.Format("&lt;webctrl parentname='Item' tag='A' type='' class='ms-srch-item-link' aaname='*' check:innerText='{0}*' /&gt;", ResolutionName)</CSharpValue>
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">string.Format("'{0}' found it.", ResolutionName)</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_8">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">string.Format("Downloading '{0}'...", ResolutionDownloadLink)</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <uasf:DownloadFileFromUrl Timeout="{x:Null}" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="1520,90" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_1">
+              <uasf:DownloadFileFromUrl.ConflictResolution>
+                <InArgument x:TypeArguments="uasf:FileConflictBehavior">
+                  <CSharpValue x:TypeArguments="uasf:FileConflictBehavior" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">UiPath.Activities.System.FileOperations.FileConflictBehavior.Replace</CSharpValue>
+                </InArgument>
+              </uasf:DownloadFileFromUrl.ConflictResolution>
+              <uasf:DownloadFileFromUrl.FileName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">Path.Combine(in_FolderStorage, ResolutionName)</CSharpValue>
+                </InArgument>
+              </uasf:DownloadFileFromUrl.FileName>
+              <uasf:DownloadFileFromUrl.ResponseAttachment>
+                <OutArgument x:TypeArguments="upr:ILocalResource">
+                  <CSharpReference x:TypeArguments="upr:ILocalResource" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">FileDownloaded</CSharpReference>
+                </OutArgument>
+              </uasf:DownloadFileFromUrl.ResponseAttachment>
+              <uasf:DownloadFileFromUrl.Url>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">ResolutionDownloadLink</CSharpValue>
+                </InArgument>
+              </uasf:DownloadFileFromUrl.Url>
+            </uasf:DownloadFileFromUrl>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1520,143" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">String.Format("The resolution was storaged in '{0}'", FileDownloaded.LocalPath)</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxySURBVFhHhVd7TNvnuWaqjqopOpqqqtqRpqnrpqnnrOt2epZMytaurbqzbOvtKOF0SVrA3ElIQgIhgSQlQCAFGq5JmzQ0CXdsjLnGXHw3Nr6CwcZcjQGbi42xMb5ffzz7QGrPupNuf7yy9fvZ3/t8z/u87/d8MQC+88+iemTpwB3x5uF6xWZtmdIwcZGnWs/naVzpTH4orVNMZXRKqayuMc9N8epUtdTe+pnYcbZ2ZPPlBqXru09a72/jHwIo55m+m9eje/HK0FTmVbZOfqFD4ivlq1HEU6JJv4wvVUto1NlRKTXjQqcSxdIFnGoXhbIHJrauDI8xbwxq36zgLx540tpfxbcCKOPbv5fTpz+R2zPBvMbVWRp1y5Hu6XkYPUHcVc1CYnRAsxrElC0K3rIb96Vz4Jo9eDS6jCLRIrJ61c5z3bL2cyzuf5cLJr4VxBMB1IldB853yU+d7R4xfDFuCPXML2F0xYoBwyo4K25ceyxEs86INt0S2qaNaJw34JZEis6ZJQhXvagaMYAxbSWfemcKnT+YypScuM7RPtc2Rj3197n+H4DaEftzmUzJ2cQ2jjGtk4uHmhmMb3nRPbeFWkJ5/7wTQtM6JjcdmLI6oNuwQ0u+Kzdt6NSZ0DBuRJVSB57NgTr5DBJb1YFk1sJ0Squstmhg7t07I5Fn/jbfNwDckVp/eJoprKS1ctZTWCqKxhDgTI8KFSozBpccWNzZgT2wjXA0BIrygYp6sBvxIeL1IRyiyLswDC4fuAtLqFFM4HzfKBLaFKC16Shai9xzjqlVl3FscVX8yNcl+RrAZ4q1A5ks3ila28BqMhHURw1KpDLHUTQ4Dr3FSxL4EfRvwbq+CEnvY+i5Yvh2rAgELVjQCDA+2IlNgw4+tx3eQBSLrghuS6aRRpcirkWCZNYIUhmiQG7vLOOWwPviNwB8rrA9ldYheyWxVdSf0CwI0ejjSGKoUC2ahcW/i6DLg415LZorKkH77b8j5eALKE44Ar18GPZpDZouxOPKH3+CnCM/xb3cRCzqtQg4/fCEnGiY0CGpWYyEVjUS6UqkM8ZMOb2GxHKBdb9F9wHk9queSaFLchPbpBYaQUuji3BTNI1lvx8ulwOKIRaKUt5DwqEXcPwX/4b/PfQj0I79J25VXoCaS8f9jFhcev3HOPPqj3HutZfwSco7UHYw4HE4sRkJo1qmR3zTCJI6hpDQIgml05X9BYNzh+9IA0/HfC7b/Jec/rE3E9tH5AktMor8AJl9YqitTridTvA66pEX9wecPPw8Lr37OvJjj+DMiSM4euLnSL/8Z9RVpKPo5OsoOf4qrh39HUqO/h6X3ngeRScOY6i9Hk7bChbdfuQMjhEG+PssJLaOOvMHphorhe5fxtzgzj57tldZTqPLXfEtCiSRmt2dmIPTv4OuR3dRnPYOai4cAftBLsbYNZiV8aFRsnGjJgPHM19F/uX3QK/LgYbfiskRNtEGA8L7qWj55Dg+O38cXbduwOPxoYOIOKljD4QatBY1snpUjlqxqzSmRmI4lEjnqRPa5VRCqxKnu+TQbTkRDtqhF3RAO/AQG9omeNc7IRm4AL9rBd6gAzwxAyczXkN29u8hG74Hm1UPl28TalEzpuWX4FhmY3HwS0wNN8HvCWB2J4Qr7FlSAhkSmjRI7ZBSd2QOeUyVfPHjhBauJ7FdSoQiRwlPDxuhLBoJIrhpxoaKBYO0BK6NJvR1ZuBk7GuIPfYb/CX2V/gg7kfIzfkZ7lX+D+I/PEieHwSr/gzMMx9jSVGAZckduDYliIbC2PaHQR+ZIy1JNNauRXKHHIXCmc2Yq8IZbXwDn0ps31OqFF1TW/B6vKTHo9iYM2B+KA9GwdugNx5DG+ssCguSYJqtgFBcgjbGuwTUm5ifzCcMPADjYTqY906gh30ZWvZvMM1Kg0XCRMBLWpgKQ7G8SrpLTEQ+RoDIcKpbRMVcHNb64luU5IGc1GcYUuMGwuEgdnejCLm3YdZWYZL7a1TXvo+qhyVIyEpCWekHuFGbi44H8WA1vo3Kuiu4/0UaPsrORxcrGTnFRBPsg1gSpcJtXwQVDiEaDWNsYwsZnXt5JGRAjSKRoUTM6S4F4ppUiG8hL9o5UJosoAj91G4Q0aAVW7NlmGL/FwoKTqG0/FMU3/oQtRXvYoR+FELWn8Cpfx2syrfQ13EM565fQk9nCXIKrkLVdxjrY6cR8i5hN0qmJhWAxuZF1uNJkmeEsCBDPGGcAJCT3U8gvllJUHGgWLEgGvYjsusltbPBPlUJA/tlXMpLRl52DrjcJNCbP4Vm5BzpdRqGCt/GKCMF3Z2n0NiTh+6Gy0g6ex6SzoNY06Qi4DMQAGRDZHxrrF6c69cSBshMYO4BECHmIltNWk+zP6lo7QLwDFaECQPhXT/5dMM5+zkWHr+E4qKjSI6PxaIuF5zBAXDlTAg+/xSMxI/Q21QHZl8nlKpP0FqWg9TsNEwOvoJNbQr8gSWSnAIV2sW42Yk0poroQLIPgjBBkTkwBRqhIrFdjZTOUbRMmOEKhgkDJMgf3eZemMQvg/7wVcR+kASjtgiiwVbIhGqMtHfjfvIHaK+rRUt/M8aFN3Hhw0zkFx7DDOfn2Jw8A39wg6yziwgBMGK0I5GIb68E8U08ctBpfDH1io0ArZVLaiJHMnMUxYNqmNx7NaMQoJzwOTlYkb0F3cAh0M4W4G55NqYnk9DDOw3pZClU6jyw+EXgac+QsXwef4n/CMyHb2BF/Eu4l6sQibiwS/lhIyflPcUSYZnMgRYhaI08FAosswSA6xHxdFs0MgET2sTIbOdBbXEiEowiQoTj98zAqj8Dw9AvkF9xEgkn0iAeysDlumQUVF9F9Zf3kXW7Dqz+G7iafZHQnwl1969glr2BgL2b0L9XfzfmnG5c7CeTkCElguchpUUcKhPuPIqp4O28eKl/oTW1QxWgEWoSSX1qZAvY8QdIN1BkBx7YF5uxwP0DBOzfIqswHU13CzEpT0ATMx53ak6ivesE1MJsJOeWobPtNcwIfgeTvpT4hCWipQh8YQosnZnUnkfGsYgEH1mMUUcFZyshploQfrpo0PJ+VrduKomuoOIa5Uhv50O0aietGEFwNwS3Z68bHkHffQz9jbHg9aVA0fseeII4DHUkYbQ/DuO9f0ZHfTo0HX+CUXUDXruWmBXSylQUGosLOT0KIjzZ/rxJZclQPGScqha4X9k/jss4O9/P6dJfTWFolmmtE1RcgwDXuBOYt4URpjzwEj24/Q5sW0RYG7sN01gtlsbOg9vzFhqux+JxZQYWJZ9iXlMOm0kOj9OMaIC4piiw5tlFldhEaBcTU0IGHum2rJ4JRxnPWnlbFH52H0CNIPLUlb7FH6TTJy4nMsaXUzo0FI3ooYSjwey2GSEqSJRMdhMJIeyyI+Iyw7lcAfqX76CadMFQYQZcq8sIBddBzBABTdqOlG/dt4uaUQOSyTkT3yRBUruKIixv5rOn7taK3S9Vk7xfW7K9uNCpey6Jrvw4rlFqOdMr33e9DRMmSFfscAe9CPgj+wv7iDjtthnUPshHQX4p5pVKeLwWonaKUL4LNxk6kzYLHqrmcW1oEqktA8SOSSLxjTLj+W7N9Srxxk/uSsL7DvkbAPYir3/lh6kdiuqa8SXH6IqTGjZt4zPJHG6rzcQdu2DzOmALRYhHDGJ1aw0mqxU7bgexX5uwEgc1a3ehh9wf6qQq4gknMbXtRaN+jUqh87Tn+2dTa0Xb3+6Kv4orAys/vS033h6a25xXrPsCnBUPLg/oUC6YQqtuDkNGK8ZMNkjX7FCtW6Fd20bf/Coe6FfxxcgiuhdsGLEG8XjWhMF5O4oF06asHnV6ldj3r3+f64kA9qKAbX6+iDOf+UhrExZypzyF/BkwJi3omTWTy4gZD3XLZOFJ3JLOoJ7cBcqEk1DZtvfvCJqtHcgIc02qDaqUt7qV/3j5k2qB99kn5flWAHvx8cDGs7l9hvczmerea0PTjgaNharXrkJk3cLo2g5a9WSHRhsE5i00EL2Y7AHwZo2EJTPujG74rg9ZtIVDW9dv8QMvPGn9vfiHAPaiYGD9wBX2wqE89vj1Yo5MnN0ndJSLJ6kqwTTKBAbieJfxBdHHVY6OuskdD5UPG1wVPPv8zWHno3Ku5/0qfui5J637VfxTAHtRJ915qmRY/0zR8MR/lIqMmcX8udGcAcXW6S6ZJ40pcOaz1aZ8zqK8TLpVX8H1nK3khd4kt58fVPGjTz9pvf8LfOev7JP94Qmb3MMAAAAASUVORK5CYII=" InformativeScreenshot="8b5c4831518d43e88840ecfa0a220d54.jpg" Selector="&lt;html app='chrome.exe' title='Páginas - Normativa Resoluciones' /&gt;" Title="Páginas - Normativa Resoluciones" Url="https://www.minsalud.gov.co/Paginas/Norm_Resoluciones.aspx" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

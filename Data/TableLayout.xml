@@ -1,0 +1,89 @@
+<extract>
+	<row exact='1'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+	</row>
+	<column exact='1' name='Column0' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='1' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column1' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column2' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='3' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column3' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='4' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column4' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='5' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column5' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column6' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='7' />
+	</column>
+	<column exact='1' name='Column7' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='8' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column8' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='9' />
+	</column>
+	<column exact='1' name='Column9' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='10' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column10' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='11' />
+		<webctrl tag='p' idx='1' />
+	</column>
+	<column exact='1' name='Column11' attr='fulltext'>
+		<webctrl tag='div' idx='table' />
+		<webctrl tag='div' idx='2' />
+		<webctrl tag='div' />
+		<webctrl tag='div' idx='12' />
+		<webctrl tag='p' idx='1' />
+	</column>
+</extract>

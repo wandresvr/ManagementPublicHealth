@@ -1,0 +1,231 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigationMenu" this:NavigationMenu.in_MenuName="Misionales" this:NavigationMenu.in_SubMenuName="Resultados en Salud Pública" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_MenuName" Type="InArgument(x:String)" />
+    <x:Property Name="in_SubMenuName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Url" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1234,1473</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NavigationMenu" sap:VirtualizedContainerService.HintSize="546,1408" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+      <ui:LogMessage.Level>
+        <InArgument x:TypeArguments="ui:LogLevel">
+          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Level>
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">string.Format("Navigating to '{0}' from '{1}' ", in_SubMenuName, in_MenuName)</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Procesos y procedimientos - Todos los documentos" sap:VirtualizedContainerService.HintSize="484,1116" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="5b110c61-f3cf-4ee7-a22a-f17635a4e8b9" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,899" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Proceso :'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="388,374" sap2010:WorkflowViewState.IdRef="NCheckState_1" Mode="WaitDisappear" ScopeIdentifier="5b110c61-f3cf-4ee7-a22a-f17635a4e8b9" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Nivel de Proceso'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b110c61-f3cf-4ee7-a22a-f17635a4e8b9" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/Ministerio/Institucional/Procesos%20y%20procedimientos/Forms/AllItems.aspx" CvElementArea="466, 605, 15, 17" CvTextArea="478, 605, 137, 16" CvTextArgument="Nivel de Proceso" CvType="ArrowButton" DesignTimeRectangle="468, 504, 147, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Nivel de Proceso'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='24' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Nivel de Proceso' check:innerText='Nivel de Proceso' /&gt;" Guid="fc087ce1-d461-4b0a-bd68-4c8893046bf7" InformativeScreenshot="2a1d406ce84866d5654820ef1bceb5b2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Procesos y procedimientos - Todos los documentos' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CvElementArea="466, 605, 15, 17" CvTextArea="478, 605, 282, 19" CvTextArgument="Nivel de Proceso : Misionales (229)" CvType="ArrowButton" DesignTimeRectangle="467, 490, 956, 40" FriendlyName="'Nivel de'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='24' tag='TD' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAa8AAAAsCAYAAADSODfDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATlSURBVHhe7ddNTmVHDIbh7Clb6LVkH+yAOXOEdLeSbSAGSMwQQyITTCzHf3V/GgreRyr1Kfurc09PyuKPVwAANvMxvA6HA4vFYrFYX3op/vICAGyH4QUA2A7DCwCwHYYXAGA7DC8AwHYYXgCA7TC8AADbYXgBALbD8AIAbIfhBQDYDsMLALAdhhcAYDsMLwDAdhheAIDtMLwAANtheAEAtsPwAgBs59sNrz//+vttHevU88Cpfv369bY+w0/7XezrpOE1veht5tLD4dT3n+v79D3ZQm3lAvfZlbPqmDOX8lnfEv2mfkv1TefMAFPp8Lq7u3t9eXl538Wml7HtT/KnOPX95/q+6j3n+o3vrLvoVJSbnPOOOXMpn/Et0e9NaufKqKwOeOXwkvX8/Pxe+T+9hLvL+Hde1N23dE49r7r3nOt3viu5xHRVprmdfMb/Z+X3JlnNVNmot/Id+NnS4XV7e/v2783NTTrA9PLVizi7jG3d57JzUV1rdnlZPWLfo2fss7KZqB/pcrYfPete2XrUV13G9y+ZycgF1V1S2q+yWSY6ozW7rKgmbD7K2JrNaM3zmSjX1e3yJhlvkrFW3llls97q9+BnaoeXuL6+DgeYvbCqSyzKqepMl5vWItVZW69ylS5j+/rsl/J7sVJTkzNRRnSZ7FxELqfugtJ+lc0y3V51mUlN911OXLoWZURUs7q+N8lrpspmvdXvwc80Gl7i6urq9enp6X33r+wCi+rK96O8sPUsI3yvyqoqY3vTXGSlX2WnvSonqr7tVTlR9buzSi6n7oKy/Shf9bt9ZOWM7U1zFZ/r9pbtVbnKyplJ1maqfNZb+R78XKPhJYPr4eHhffef6KLSC8z2/LPdiyhf7a2VrKoytjfNRVbOrmQt26tyourbnj7bmpXVRdVb5S9Af6FV/Wzv65bvTbPTnKV1v1S3t2xPn21tYpqd5KJMVsveN/kdoB1eMrju7+/fnr3uEtO+zdm68rVsXy3l95EqY3v6XK1MlLXLimpq2qtyQvvVUpNepOqt8heYveyqnvB7oTW7LF+LMsr2pjmRZbuc7qulql7md2T0W3RpLZLVAascXtlfXKq6qPQi8xea34su4/eVSbbK2F6V66ycrbLTXpUTXT+iZ+xZ++xVvVXRBWYvPsvXs5zQns90e8v2zp0T3X5Cz0zOntoXk4yXnTnmXfh50uElg+vx8fF9F+suKr3MbM7vlc36flTLTLJVxvaqXGflbJWd9qqc6PoVe7Z6T9Wz5HLqLqion53z9SxndWf83rK9c+dEt18xOVv1J797zLed+ptAOrwmJheVv9CyC07rXd/z9SznRTmt2XqUE1lddX3rmHet1FTUF7be9YXfi6iWkcupu6BWLjD/vmjvdWfEpBZllO1lOa3bXpSNasLWu34m63fnxCTjHfs9gHXx4SVsrrrkqp7Qvl9WVMvYd+gZ+6xsxq7KJKNW3mdXpMv4vi6r64tJJiOX0zkvMP++6P1as8uKasLmo0xUU76ne7tsXfm90rpfVtfPRDn/HrtU1NOlsnqk6wPqpOEF4Hv4KkOD4YUphheAN589OBhcWMHwAvDhswYIgwurGF4AgO0wvAAA22F4AQC2w/ACAGyH4QUA2A7DCwCwnY/hdTgcWCwWi8X60kvxlxcAYDsMLwDAZl5f/wEIMKMB5KEtLAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector">
+                            <uix:Target.FuzzySelectorArgument>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">string.Format("&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='ms-gb' aaname=' :*' check:innerText='*{0}*' /&gt;", in_MenuName)</CSharpValue>
+                              </InArgument>
+                            </uix:Target.FuzzySelectorArgument>
+                          </uix:Target>
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/Ministerio/Institucional/Procesos%20y%20procedimientos/Forms/AllItems.aspx" DesignTimeRectangle="467, 842, 956, 39" DesignTimeScaleFactor="1" FriendlyName="'Proceso :'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='33' tag='TD' /&gt;" Guid="8ceaf441-ca3c-4503-a873-b532d5c469c1" ImageBase64="" InformativeScreenshot="f9efd8e39a372bbfe79984a4ea5d3143.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Procesos y procedimientos - Todos los documentos' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">string.Format("&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='ms-gb2' aaname='*' check:innerText='*{0}*' /&gt;", in_SubMenuName)</CSharpValue>
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Proceso :'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="388,374" sap2010:WorkflowViewState.IdRef="NCheckState_2" Mode="WaitDisappear" ScopeIdentifier="5b110c61-f3cf-4ee7-a22a-f17635a4e8b9" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b110c61-f3cf-4ee7-a22a-f17635a4e8b9" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/Ministerio/Institucional/Procesos%20y%20procedimientos/Forms/AllItems.aspx" CvElementArea="476, 592, 14, 17" CvTextArea="488, 591, 57, 16" CvTextArgument="Proceso" CvType="ArrowButton" DesignTimeRectangle="478, 856, 67, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Proceso'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='97' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Nivel de Proceso' check:innerText='Proceso' /&gt;" Guid="f01b79fd-4aa1-4de4-a34a-ce3f40b00a4a" InformativeScreenshot="b5dd2191ea4d5dcd6d1e861c2c0f986e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Procesos y procedimientos - Todos los documentos' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CvElementArea="476, 592, 14, 17" CvTextArea="488, 591, 606, 19" CvTextArgument="Proceso : Planeacion, Monitoreo y Evaluacion de los Resultados en Salud Publica (19)" CvType="ArrowButton" DesignTimeRectangle="467, 842, 956, 39" FriendlyName="'Proceso :'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='97' tag='TD' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector">
+                            <uix:Target.FuzzySelectorArgument>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">string.Format("&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='ms-gb2' aaname='*' check:innerText='*{0}*' /&gt;", in_SubMenuName)</CSharpValue>
+                              </InArgument>
+                            </uix:Target.FuzzySelectorArgument>
+                          </uix:Target>
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.minsalud.gov.co/Ministerio/Institucional/Procesos%20y%20procedimientos/Forms/AllItems.aspx" DesignTimeRectangle="467, 381, 32, 31" DesignTimeScaleFactor="1" FriendlyName="'TD'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='38' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='ms-cellStyleNonEditable ms-vb-itmcbx ms-vb-imgFirstCell' aaname='' /&gt;" Guid="f5b3f3b1-c989-44cf-b5d7-5cbd03645b53" InformativeScreenshot="5cde6a62d00c8108867c68d7543e346f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Procesos y procedimientos - Todos los documentos' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="467, 342, 956, 39" FriendlyName="'Proceso :'" FullSelectorArgument="&lt;webctrl id='onetidDoclibViewTbl0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='37' tag='TD' /&gt;" ImageBase64="" SearchSteps="FuzzySelector">
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">string.Format("&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='ms-gb2' aaname='*' check:innerText='*{0}*' /&gt;", in_SubMenuName)</CSharpValue>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="877dd5f9db4471f3d3a7b5109a3e2dac.jpg" Selector="&lt;html app='chrome.exe' title='Procesos y procedimientos - Todos los documentos' /&gt;" Title="Procesos y procedimientos - Todos los documentos">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">in_Url</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

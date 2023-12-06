@@ -1,0 +1,166 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="MenuNavigation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_MenuName" Type="InArgument(x:String)" />
+    <x:Property Name="in_MenuTitle" Type="InArgument(x:String)" />
+    <x:Property Name="in_Url" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1234,846</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="MenuNavigation" sap:VirtualizedContainerService.HintSize="546,781" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+      <ui:LogMessage.Level>
+        <InArgument x:TypeArguments="ui:LogLevel">
+          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Level>
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">string.Format("Navigating to '{0}' from '{1}'...", in_MenuName, in_MenuTitle)</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Indicadores de Salud" sap:VirtualizedContainerService.HintSize="484,489" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d94648e8-8930-4c1d-9902-42c6925fc162" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Menu'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d94648e8-8930-4c1d-9902-42c6925fc162" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.epssura.com/indicadores-de-salud" CvElementArea="475, 618, 172, 53" CvType="Button" DesignTimeRectangle="504, 623, 116, 41" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Proporción madres'" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl parentid='content_area' tag='A' aaname='*' type='' class='' check:text='Proporción madres adolescentes' /&gt;" Guid="3b9f967e-dc5c-4169-8f06-db86a892b7f0" InformativeScreenshot="22de6330985ede1f7934b2e4cb4d73b0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Indicadores de Salud' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="475, 583, 170, 26" CvType="Text" DesignTimeRectangle="476, 583, 169, 26" ElementType="Text" FriendlyName="'Salud Sexual'" ImageBase64="" SearchSteps="CV" TargetType="ComputerVisionBased">
+                        <uix:Target.CvTextArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">in_MenuTitle</CSharpValue>
+                          </InArgument>
+                        </uix:Target.CvTextArgument>
+                      </uix:Target>
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.FullSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">string.Format("&lt;webctrl parentid='content_area' tag='A' aaname='{0}' /&gt;", in_MenuName)</CSharpValue>
+                    </InArgument>
+                  </uix:TargetAnchorable.FullSelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATMSURBVFhHvZfba1xVFMb9P4JQChIoFm3xRh9EBaEKFn2RIlVQKeJDUQp90BexoFBQQR98aEzaJL0YtbG2Udq0JaYS7cVeksmknclkMplObtOk6Yy5zUya5f6ts8+c05OZyXQMPiz2OWf2Xuvb3/rW2nseevi7kJS0hn4d6xrNaJ7rGvjW57wH5/4HqwCgrzi+dWpIHm8NO99cC86v0aoC0DwwLdGZBdl5ZlgeaTIswEZwfo1WMQV1jQ6IHR0xmckXZLFwT07EM/LisWgZFh48PeUBuGYpf/fsiPSm5yW/fE9GZ3Oy9+KYbGgOGzZ8+qiBmVUBrLcsEGBjS1j2nB+Vq+l/DBsF6RnLyusdcfu73b07VmkVU4BtOzEkHYmMvH82qTsGyKMtIdn1e0oBTM7l5NvraXmi9YZZZ9ko5a+MlQZgaUUDG5quS+90TvJLBRmcWdRgW48P6jwA7TyTUCCk553OuKxr6DW/BYCQRvc5oJMVAMipPrNIWeiTF36MyLlkVuYLIkvLy3I3V5DuVEZ2dyflsUNhqT/Yr8F/jc9IW2Ranjpi2HDXE9D1qeZ/DgIoLvKeXUDrm/rlmaNh+bBrRIMkszmtCgTZHL4tLx+PaYm+dnJIjkbuyAfdt+x6fAdBeFYiBUym41naWGjeAcA3tzMiTsqRauhOZuT2YkGupOfk456UivXVk1EV7Ja2G05aFIDjyx9vJQDdOZO8yQTrSi1Ip6H4yyvjKsjn2gak/kBYgTGH5x0dg6qRnolZbV6w8fxPEVuubltfDYDmyHFaNLOIdozi0YBrvF8wAmwyKWDnVAzVQEB2vqsrIZ/8OSpvd46YVm5YdFn12eoAfGxs+f6m7DHC++LymOwPTakWEOfl8VmJ3V1QXdCyESgMfH4prcBfao8qOMq3qAnrvzoGjLma0BFQrunvDkB2vqk1Is/+EJGtx2LapN48nVAGtp8aVqE+eeRm0SdWJQD7bgMSCPHtM0zs+9sZ2a33PqEjcyhVShQ9BINjVTPgN8oNsc3kl7QlU4rhqXmHeqMHAtOgoB02qBbS51WD56smABjqR+Guc0pPfzMscXeA/s8ujcs3BigMbD484KXP56dmAG5/wOoPhpTiT/8al9Pm3KBltw9OaWC6IiDplup3zQBg6qxf2mN3ZNa0Z1JBamjdlBzNaO/FSY+dtQXgzWGX5JxA6xqv6Uhv+PrqhOrFYcrOX1MG/PNMAILRfoezee0Xxc6n6SrtswyA4Ldy5s1FZO79AAEiRE5KB4C1wBqsBAAsAEIX25PNJz6dZ0ZOTADQFck/nY/m483z+QrYSgDBRUEH9p2g1DXlqD3efifwV9cm718T3JDP7gdgc1W8zZQITp7Z7bafY3pRfeO3uC2xkHz0x6ieAZyMlYL6LQDA2cmmw04/h0ry+d65W9rduGh0pbJadrzT27myUwXM53Da2GLbrfWl5o8RsBIM9OmuaCiJjHPC0Wa5bhH0lV+immd6PG2XuaTh6baobD5EsOp27loJDTgg9Ew3LZbdQTndjOsYf0wuTMzpkcylZPf5lKN2XbtWAKy6eScA5QULqJwLBgxwKyIdMME87+5XmfKgrUyBjsaJdYTC6Www4ire0cSksuJew/1rHsRWMvC/Wkj+BXCg0ZGAkgSVAAAAAElFTkSuQmCC" InformativeScreenshot="1e59d4c5fa17bd14d3dc82920ddca8b4.jpg" Selector="&lt;html app='chrome.exe' title='Indicadores de Salud' /&gt;" Title="Indicadores de Salud">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">in_Url</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
